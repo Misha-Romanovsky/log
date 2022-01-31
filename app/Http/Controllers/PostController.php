@@ -37,9 +37,9 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-          'title'=>'required|max:255',
-          'description'=>'required|max:255',
-          'price'=>'required|max:255',
+          'title' => 'required|min:5|max:255',
+          'description' => 'required|min:3|max:255',
+          'price' => 'required|min:1|max:255',
         ]);
         $post = new Post([
           'title' => $request->get('title'),

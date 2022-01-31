@@ -13,9 +13,12 @@
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="/css/table.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
     <!-- My style-->
     <link rel="stylesheet" href="/css/MyStyle.css">
-    
+
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -88,5 +91,7 @@
     <!-- Scripts -->
     <script src="/js/app.js"></script>
     <script src="/js/MyJS.js"></script>
+    <script src="/js/table.js"></script>
+    
 </body>
 </html>
