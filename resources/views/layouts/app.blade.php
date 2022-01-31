@@ -13,6 +13,9 @@
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
 
+    <!-- My style-->
+    <link rel="stylesheet" href="/css/MyStyle.css">
+    
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -70,6 +73,7 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+                                    <li> <a  class="nab-link" href="{{ route('posts.index') }}">Posts</a> </li>
                                 </ul>
                             </li>
                         @endif
@@ -83,5 +87,6 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="/js/MyJS.js"></script>
 </body>
 </html>
