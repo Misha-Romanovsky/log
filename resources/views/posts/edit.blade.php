@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Create post')
+@section('title', 'Edit post №'.$post->title)
 
 @section('content')
 
@@ -18,23 +18,24 @@
     @endif
 
 
-    <form method="POST" action="{{ route('posts.store') }}">
+    <form method="POST" action="{{ route('posts.update', $post) }}">
        {{ csrf_field() }}
+       {{ method_field('PATCH') }}
 
       <div class="form-group">
         <label for="post-title">Name</label>
-        <input name="title" type="text" value="{{old('title')}}" class="form-control" id="post-title">
+        <input name="title" type="text" value="{{$post->title}}" class="form-control" id="post-title">
       </div>
       <div class="form-group">
         <label for="post-description">Description</label>
-        <textarea name="description" class="form-control" id="post-description" rows="3"> {{old('description')}} </textarea>
+        <textarea name="description" class="form-control" id="post-description" rows="3"> {{$post->description}} </textarea>
       </div>
       <div class="form-group">
         <label for="post-price">Price</label>
-        <input name="price" type="text" value="{{old('title')}}" class="form-control" id="post-price">
+        <input name="price" type="text" value="{{$post->price}}" class="form-control" id="post-price">
       </div>
 
-      <button type="submit"  class="btn btn-success">Create post</button>
+      <button type="submit"  class="btn btn-success">Edit post</button>
       <a href="{{route('posts.index')}}" class="btn btn-success">Back</a>
     </form>
   </div>

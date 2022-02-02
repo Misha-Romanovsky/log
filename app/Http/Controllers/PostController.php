@@ -36,15 +36,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $this->validate($request,[
           'title' => 'required|min:5|max:255',
           'description' => 'required|min:3|max:255',
-          'price' => 'required|min:1|max:255',
+          'price' => 'required|min:1|max:255'
         ]);
         $post = new Post([
           'title' => $request->get('title'),
           'description' => $request->get('description'),
-          'price' => $request->get('price'),
+          'price' => $request->get('price')
         ]);
 
         $post->save();
@@ -60,7 +60,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+
+        return view('posts.show', compact('post'));
     }
 
     /**
@@ -71,7 +73,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+      $post = Post::find($id);
+
+      return view('posts.edit', compact('post'));
     }
 
     /**
@@ -83,7 +87,22 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $this->validate($request,[
+        'title' => 'required|min:5|max:255',
+        'description' => 'required|min:3|max:255',
+        'price' => 'required|min:1|max:255'
+      ]);
+
+      $post = Post::find($id);
+
+      $post->title = $request->get('title');
+      $post->description = $request->get('description');
+      $post->price = $request->get('price');
+
+      $post->save();
+
+      return redirect('/posts')->with('success', 'Post edited!');
+
     }
 
     /**
@@ -94,6 +113,10 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+        $post ->  delete();
+
+        return redirect('/posts')->with('success', 'Post deleted!');
+
     }
 }
