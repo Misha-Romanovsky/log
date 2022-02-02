@@ -7,7 +7,7 @@
 
 <div class="container">
   <div class="row">
- <a href="{{route('posts.create')}}" class="btn btn-success">Создать пост</a>
+ <a href="{{route('posts.create')}}" class="btn btn-success">Create post</a>
 
  @if(session()->get('success'))
      <div class="alert alert-success">

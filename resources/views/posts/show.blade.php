@@ -8,6 +8,9 @@
     <h3>{{$post->title}}</h3>
     <p>{{$post->description}}</p>
     <p><b>{{$post->price}}</b></p>
+    <br>
+    <br>
+    <br>
     <a href="{{route('posts.index')}}" class="btn btn-success">Back</a>
 
   </div>
