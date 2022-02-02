@@ -8,16 +8,17 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Laravel @yield('title')</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/table.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- My style-->
     <link rel="stylesheet" href="/css/MyStyle.css">
+    <link rel="stylesheet" href="/css/table.css">
+
 
     <!-- Scripts -->
     <script>
@@ -92,6 +93,6 @@
     <script src="/js/app.js"></script>
     <script src="/js/MyJS.js"></script>
     <script src="/js/table.js"></script>
-    
+
 </body>
 </html>
