@@ -32,7 +32,7 @@
       </div>
       <div class="form-group">
         <label for="post-price">Price</label>
-        <input name="price" type="text" value="{{$post->price}}" class="form-control" id="post-price">
+        <input name="price" type="number" value="{{$post->price}}" class="form-control" id="post-price">
       </div>
 
       <button type="submit"  class="btn btn-success">Edit post</button>

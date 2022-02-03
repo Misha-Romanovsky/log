@@ -31,7 +31,7 @@
       </div>
       <div class="form-group">
         <label for="post-price">Price</label>
-        <input name="price" type="text" value="{{old('title')}}" class="form-control" id="post-price">
+        <input name="price" type="number" value="{{old('title')}}" class="form-control" id="post-price">
       </div>
 
       <button type="submit"  class="btn btn-success">Create post</button>

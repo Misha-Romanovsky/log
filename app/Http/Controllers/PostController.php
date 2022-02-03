@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 
+
 class PostController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -44,7 +46,8 @@ class PostController extends Controller
         $post = new Post([
           'title' => $request->get('title'),
           'description' => $request->get('description'),
-          'price' => $request->get('price')
+          'price' => $request->get('price'),
+
         ]);
 
         $post->save();
@@ -119,4 +122,5 @@ class PostController extends Controller
         return redirect('/posts')->with('success', 'Post deleted!');
 
     }
+
 }
