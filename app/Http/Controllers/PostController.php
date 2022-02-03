@@ -39,15 +39,17 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
+          'user_name' => 'required',
           'title' => 'required|min:5|max:255',
           'description' => 'required|min:3|max:255',
           'price' => 'required|min:1|max:255'
+
         ]);
         $post = new Post([
+          'user_name' => $request->get('user_name'),
           'title' => $request->get('title'),
           'description' => $request->get('description'),
-          'price' => $request->get('price'),
-
+          'price' => $request->get('price')
         ]);
 
         $post->save();

@@ -20,6 +20,7 @@
         @foreach($posts as $post)
         <tr>
           <th>#</th>
+          <th>User</th>
           <th>Name</th>
           <th>Description</th>
           <th>Price</th>
@@ -29,10 +30,12 @@
         <tbody>
           <tr>
             <td>{{ $post->id }}</td>
+            <td>{{ $post->user_name }}</td>
             <td>{{ $post->title }}</td>
             <td>{{ $post->description }}</td>
             <td> {{ $post->price }} </td>
             <td class="table-buttons">
+            @if($post->user_name == Auth::user()->name)
               <a href="{{route('posts.show', $post) }}" class="btn btn-success">
               <i class='bx bx-bullseye'></i>
             </a>
@@ -48,6 +51,12 @@
                 <i class='bx bx-trash' ></i>
               </button>
             </form>
+            @else
+            <a href="{{route('posts.show', $post) }}" class="btn btn-success">
+            <i class='bx bx-bullseye'></i>
+          </a>
+          @endif
+
             </td>
           </tr>
           @endforeach

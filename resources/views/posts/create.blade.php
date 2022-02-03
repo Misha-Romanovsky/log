@@ -20,7 +20,16 @@
 
     <form method="POST" action="{{ route('posts.store') }}">
        {{ csrf_field() }}
+       <div class="form-group">
+         <h1>You will create a post like
+           {{Auth::user()->name}}
+         </h1>
 
+       </div>
+       <div class="form-group">
+         <label for="post-user_name"></label>
+         <input name="user_name" type="hidden" value="{{Auth::user()->name}}" class="form-control" id="post-user_name">
+       </div>
       <div class="form-group">
         <label for="post-title">Name</label>
         <input name="title" type="text" value="{{old('title')}}" class="form-control" id="post-title">
@@ -34,7 +43,7 @@
         <input name="price" type="number" value="{{old('title')}}" class="form-control" id="post-price">
       </div>
 
-      <button type="submit"  class="btn btn-success">Create post</button>
+      <button type="submit" class="btn btn-success">Create post</button>
       <a href="{{route('posts.index')}}" class="btn btn-success">Back</a>
     </form>
   </div>
